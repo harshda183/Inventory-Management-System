@@ -38,27 +38,27 @@ Features
 Project Structure
 
 inventory-management-system/
-│
-├── config/
-│   └── db.js
-│
-├── controllers/
-│   └── productController.js
-│
-├── middleware/
-│   └── errorMiddleware.js
-│
-├── models/
-│   └── Product.js
-│
-├── routes/
-│   └── productRoutes.js
-│
-├── .env
-├── .gitignore
-├── package.json
-├── server.js
-└── README.md
+
+── config/
+  └── db.js
+
+── controllers/
+   └── productController.js
+
+── middleware/
+   └── errorMiddleware.js
+
+── models/
+   └── Product.js
+
+── routes/
+   └── productRoutes.js
+
+── .env
+── .gitignore
+── package.json
+── server.js
+── README.md
 
 ## Screenshots
 ### 1. Create Product
