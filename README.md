@@ -60,11 +60,45 @@ inventory-management-system/
 ├── server.js
 └── README.md
 
+## Screenshots
+### 1. Create Product
+![Create Product](./screenshots/1.%20Create%20product.png)
+
+### 2. Get  All Products
+![Get  All Products](./screenshots/2.%20Get%20all%20products.png)
+
+### 3. Search Product
+![Search Product](./screenshots/3.Search%20products.png)
+
+### 4. Filter By Category
+![Filter By Category](./screenshots/4.%20Filter%20by%20category.png)
+
+### 5. Get Product By Id
+![Get Product By Id](./screenshots/5.%20Get%20product%20by%20Id.png)
+
+### 6. Update Product
+![Update Product](./screenshots/6.%20Update%20product.png)
+
+### 7. Restock (+10)
+![Restock(+10)](./screenshots/7.%20Restock(+10).png)
+
+### 8. Sale (-5)
+![Sale (-5)](./screenshots/8.%20Sale%20(-5).png)
+
+### 9. Low-Stock Report
+![Low-Stock Report](./screenshots/9.%20Low-stock%20report.png)
+
+### 10. Category Summary
+![Category Summary](./screenshots/10.%20Category%20summary.png)
+
+### 11. Delete Product
+![Delete Product](./screenshots/11.%20Delete%20product.png)
+
 Installation and Setup
 
 1. Clone the Repository
 
-git clone <your-github-repository-link>
+git clone https://github.com/harshda183/Inventory-Management-System
 
 2. Navigate to the Project Folder
 
