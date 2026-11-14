@@ -1,0 +1,17 @@
+{
+  "info": { "name": "Inventory Management API", "_postman_id": "8d98a5de-ec8d-4a58-9e61-b12e1e1b3d10", "description": "Assignment 3 - Inventory and Data Management System", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:5000" }, { "key": "productId", "value": "PASTE_CREATED_PRODUCT_ID_HERE" }],
+  "item": [
+    { "name": "1. Create product", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Gel Pen Pack of 15\",\n  \"sku\": \"STNY-PN-713\",\n  \"category\": \"Stationery\",\n  \"price\": 120,\n  \"quantity\": 48,\n  \"reorderLevel\": 20,\n  \"supplier\": \"Cello Pens\"\n}" }, "url": "{{baseUrl}}/api/products" }, "event": [{ "listen": "test", "script": { "exec": ["if (pm.response.code === 201) { pm.collectionVariables.set('productId', pm.response.json().product._id); }"] } }] },
+    { "name": "2. Get all products (pagination/sort/filter)", "request": { "method": "GET", "url": "{{baseUrl}}/api/products?page=1&limit=10&sort=price&order=asc" } },
+    { "name": "3. Search products", "request": { "method": "GET", "url": "{{baseUrl}}/api/products?search=pen" } },
+    { "name": "4. Filter by category", "request": { "method": "GET", "url": "{{baseUrl}}/api/products?category=Stationery" } },
+    { "name": "5. Get product by ID", "request": { "method": "GET", "url": "{{baseUrl}}/api/products/{{productId}}" } },
+    { "name": "6. Update product", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"price\": 140,\n  \"quantity\": 60\n}" }, "url": "{{baseUrl}}/api/products/{{productId}}" } },
+    { "name": "7. Restock (+10)", "request": { "method": "PATCH", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"change\": 10\n}" }, "url": "{{baseUrl}}/api/products/{{productId}}/stock" } },
+    { "name": "8. Sale (-5)", "request": { "method": "PATCH", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"change\": -5\n}" }, "url": "{{baseUrl}}/api/products/{{productId}}/stock" } },
+    { "name": "9. Low-stock report", "request": { "method": "GET", "url": "{{baseUrl}}/api/products/low-stock" } },
+    { "name": "10. Category summary", "request": { "method": "GET", "url": "{{baseUrl}}/api/products/summary" } },
+    { "name": "11. Delete product", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/products/{{productId}}" } }
+  ]
+}
